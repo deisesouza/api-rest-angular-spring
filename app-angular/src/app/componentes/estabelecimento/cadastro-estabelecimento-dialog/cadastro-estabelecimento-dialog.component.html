@@ -1,0 +1,26 @@
+<h1 *ngIf="!isAlteracao" mat-dialog-title>Adicionar Estabelecimento</h1>
+<h1 *ngIf="isAlteracao" mat-dialog-title>Editar Profissional</h1>
+<div mat-dialog-content class="content">
+
+  <mat-form-field class="campos">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="data.nome">
+  </mat-form-field>
+
+  <mat-form-field class="campos">
+    <mat-label>Endereço</mat-label>
+    <input matInput [(ngModel)]="data.endereco">
+  </mat-form-field>
+
+  <mat-form-field class="campos">
+    <mat-label>Telefone</mat-label>
+    <input matInput [(ngModel)]="data.telefone">
+  </mat-form-field>
+
+</div>
+
+<div mat-dialog-actions class="botoes">
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button *ngIf="!isAlteracao" mat-button [mat-dialog-close]="data" cdkFocusInitial>Adicionar</button>
+  <button *ngIf="isAlteracao" mat-button [mat-dialog-close]="data" cdkFocusInitial>Editar</button>
+</div>

@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon icon-menu" [matMenuTriggerFor]="menu">
+    <mat-icon class="icon-menu">menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item><a routerLink="/profissional">Profissional</a></button>
+    <button mat-menu-item><a routerLink="/estabelecimento">Estabelecimento</a></button>
+    <button mat-menu-item><a routerLink="/vinculo">Vínculo</a></button>
+  </mat-menu>
+
+  <span class="titulo">Crud Angular-Spring</span>
+  <span class="example-spacer"></span>
+
+</mat-toolbar>

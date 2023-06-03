@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Criar Vínculo</h1>
+<div mat-dialog-content class="content">
+
+  <mat-form-field class="campos">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="data.nome_profissional">
+  </mat-form-field>
+
+  <mat-form-field class="campos">
+    <mat-label>Endereço</mat-label>
+    <input matInput [(ngModel)]="data.nome_estabelecimento">
+  </mat-form-field>
+
+</div>
+
+<div mat-dialog-actions class="botoes">
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Vincular</button>
+</div>
+
