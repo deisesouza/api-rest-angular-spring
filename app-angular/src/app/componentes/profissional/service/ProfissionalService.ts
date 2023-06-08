@@ -25,5 +25,10 @@ export class ProfissionalService {
   deleteProfissional(id: number): Observable<any> {
     return this.http.delete<Profissional>(`${this.url}?id=${id}`);
   }
+  
+  getProfissionalById(id: number): Observable<Profissional>{
+  const idUrl = '${this.url}/${id}'
+  return this.http.get<Profissional>(idUrl)
+}
 
 }
