@@ -55,8 +55,21 @@ export class CrudProfissionalComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
-        this.dataSource.push(result);
-        this.idTable.renderRows();
+        console.log(result);
+        if (this.dataSource.map(p => p.id).includes(result.id)) {
+          this.profissionalService.editProfissional(result)
+            .subscribe((data: Profissional) => {
+              const index = this.dataSource.findIndex(p => p.id === data.id);
+              this.dataSource[index] = data;
+              this.idTable.renderRows();
+            });
+        } else {
+          this.profissionalService.createProfissional(result)
+            .subscribe((data: Profissional) => {
+              this.dataSource.push(data);
+              this.idTable.renderRows();
+            });
+        }
       }
     });
   }
