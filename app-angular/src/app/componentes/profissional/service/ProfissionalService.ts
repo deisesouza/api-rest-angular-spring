@@ -23,7 +23,7 @@ export class ProfissionalService {
   }
 
   deleteProfissional(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}?id=${id}`);
+    return this.http.delete<Profissional>(`${this.url}?id=${id}`);
   }
 
 }
