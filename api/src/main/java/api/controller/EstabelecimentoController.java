@@ -37,17 +37,17 @@ public class EstabelecimentoController {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Optional<Estabelecimento>> findById(@PathVariable Long id) {
 		Optional<Estabelecimento> newEntity = Optional.ofNullable(service.findById(id));
-        return newEntity.isPresent()
-                ? ResponseEntity.ok(newEntity)
-                : ResponseEntity.notFound().build();
+        	return newEntity.isPresent()
+                	? ResponseEntity.ok(newEntity)
+                	: ResponseEntity.notFound().build();
 	}
 	
 	@GetMapping(value = "/{name}")
 	public ResponseEntity<Optional<Estabelecimento>> findName(@PathParam("name") String name) {
 		Optional<Estabelecimento> newEntity = Optional.ofNullable(service.findByName(name));
-        return newEntity.isPresent()
-                ? ResponseEntity.ok(newEntity)
-                : ResponseEntity.notFound().build();
+        	return newEntity.isPresent()
+                	? ResponseEntity.ok(newEntity)
+                	: ResponseEntity.notFound().build();
 	}
 
 	@PutMapping(path = "/{id}")
