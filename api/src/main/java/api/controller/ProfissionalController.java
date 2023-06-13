@@ -37,9 +37,9 @@ public class ProfissionalController {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Optional<Profissional>> findById(@PathVariable Long id) {
 		Optional<Profissional> newEntity = Optional.ofNullable(service.findById(id));
-        return newEntity.isPresent()
-                ? ResponseEntity.ok(newEntity)
-                : ResponseEntity.notFound().build();
+       		 return newEntity.isPresent()
+                	? ResponseEntity.ok(newEntity)
+                	: ResponseEntity.notFound().build();
 	}
 
 	@PutMapping(path = "/{id}")
@@ -51,9 +51,9 @@ public class ProfissionalController {
 	@GetMapping(value = "/{name}")
 	public ResponseEntity<Optional<Profissional>> findName(@PathParam("name") String name) {
 		Optional<Profissional> newEntity = Optional.ofNullable(service.findByName(name));
-        return newEntity.isPresent()
-                ? ResponseEntity.ok(newEntity)
-                : ResponseEntity.notFound().build();
+       		return newEntity.isPresent()
+                	? ResponseEntity.ok(newEntity)
+                	: ResponseEntity.notFound().build();
 	}
 
 	@DeleteMapping
